@@ -20,6 +20,12 @@ module.exports.getQuotes = async function(req, res) {
 // post a quote
 module.exports.addQuote = function(req, res) {
 
+    /*    #swagger.parameters['obj'] = {
+              in: 'body',
+              description: 'Adding new user.',
+              schema: { $ref: '#/definitions/AddQuote' }
+      } */
+
     Quote.create(req.body)
         .then(val => {
             res.statusCode = 201;

@@ -5,8 +5,16 @@ let quotesControllers = require("../controllers/index");
 
 router.route("/")
     .get(quotesControllers.getQuotes)
-    .post(quotesControllers.addQuote);
+    // .post(quotesControllers.addQuote);
 
+router.route("/").post((req, res) => {
+    /*    #swagger.parameters['obj'] = {
+              in: 'body',
+              description: 'Adding new quote',
+              schema: { $ref: '#/definitions/AddQuote' }
+      } */
+    quotesControllers.addQuote(req, res)
+})
 
 
 router.route("/:id")

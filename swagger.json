@@ -10,5 +10,60 @@
   "schemes": [
     "http"
   ],
-  "paths": {}
+  "paths": {
+    "/quotes/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Adding new quote",
+            "schema": {
+              "$ref": "#/definitions/AddQuote"
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/quotes/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    }
+  },
+  "definitions": {
+    "AddPost": {
+      "type": "object",
+      "properties": {
+        "quote": {
+          "type": "string",
+          "example": "hey there"
+        },
+        "author": {
+          "type": "string",
+          "example": "Tatenda Nyamuda"
+        }
+      },
+      "required": [
+        "quote",
+        "author"
+      ]
+    }
+  }
 }

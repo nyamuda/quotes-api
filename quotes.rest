@@ -1,0 +1,15 @@
+//LOCAL SERVER
+###
+GET http://localhost:3000/quotes
+
+###
+POST http://localhost:3000/
+Content-Type: application/json
+
+{
+
+}
+
+
+###
+GET http://localhost:3000/id

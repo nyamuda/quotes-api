@@ -7,6 +7,12 @@ const doc = {
     },
     host: 'localhost:3000',
     schemes: ['http'],
+    definitions: {
+        AddPost: {
+            $quote: "hey there",
+            $author: "Tatenda Nyamuda"
+        }
+    }
 };
 
 const outputFile = './swagger.json';
