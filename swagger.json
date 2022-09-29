@@ -53,7 +53,7 @@
       "properties": {
         "quote": {
           "type": "string",
-          "example": "hey there"
+          "example": "hello there"
         },
         "author": {
           "type": "string",

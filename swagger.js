@@ -9,7 +9,7 @@ const doc = {
     schemes: ['https'],
     definitions: {
         AddPost: {
-            $quote: "hey there",
+            $quote: "hello there",
             $author: "Tatenda Nyamuda"
         }
     }
