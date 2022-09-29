@@ -3,7 +3,26 @@
 GET http://localhost:3000/quotes
 
 ###
-POST http://localhost:3000/
+POST http://localhost:3000/quotes
+Content-Type: application/json
+
+{
+
+}
+
+###
+GET http://localhost:3000/quotes/6334ba162c2da193feea33ed
+
+
+
+
+//RENDER
+
+###
+GET https://quotes-app-7pqb.onrender.com/quotes
+
+###
+POST https://quotes-app-7pqb.onrender.com/quotes
 Content-Type: application/json
 
 {
@@ -12,4 +31,4 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:3000/id
+GET https://quotes-app-7pqb.onrender.com/quotes/6334ba162c2da193feea33ed

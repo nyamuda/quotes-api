@@ -5,8 +5,8 @@ const doc = {
         title: 'Quotes API',
         description: 'Quotes by various authors',
     },
-    host: 'localhost:3000',
-    schemes: ['http'],
+    host: 'quotes-app-7pqb.onrender.com',
+    schemes: ['https'],
     definitions: {
         AddPost: {
             $quote: "hey there",
