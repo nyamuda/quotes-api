@@ -7,14 +7,23 @@ POST http://localhost:3000/quotes
 Content-Type: application/json
 
 {
+ "quote": "Hello there",
+ "author": "Tatenda"
+}
 
+###
+PUT http://localhost:3000/quotes/6334ba162c2da193feea33ed
+Content-Type: application/json
+
+{
+ "author": "Albert Einstein"
 }
 
 ###
 GET http://localhost:3000/quotes/6334ba162c2da193feea33ed
 
-
-
+###
+DELETE  http://localhost:3000/quotes/6334b1442c2da193fee719dc
 
 //RENDER
 
@@ -26,7 +35,8 @@ POST https://quotes-app-7pqb.onrender.com/quotes
 Content-Type: application/json
 
 {
-
+  "quote": "Every child is an artist.  The problem is how to remain an artist once he grows up.",
+  "author": "Pablo Picasso"
 }
 
 
