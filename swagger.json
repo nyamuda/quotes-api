@@ -1,0 +1,114 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Quotes API",
+    "description": "Quotes by various authors",
+    "version": "1.0.0"
+  },
+  "host": "quotes-app-7pqb.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/quotes/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Adding new quote",
+            "schema": {
+              "$ref": "#/definitions/AddQuote"
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/quotes/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Updating a quote",
+            "schema": {
+              "$ref": "#/definitions/UpdateQuote"
+            }
+          }
+        ],
+        "responses": {}
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    }
+  },
+  "definitions": {
+    "AddPost": {
+      "type": "object",
+      "properties": {
+        "quote": {
+          "type": "string",
+          "example": "add a new quote"
+        },
+        "author": {
+          "type": "string",
+          "example": "Tatenda Nyamuda"
+        }
+      },
+      "required": [
+        "quote",
+        "author"
+      ]
+    },
+    "UpdateQuote": {
+      "type": "object",
+      "properties": {
+        "quote": {
+          "type": "string",
+          "example": "update a quote"
+        },
+        "author": {
+          "type": "string",
+          "example": "Tatenda Nyamuda"
+        }
+      }
+    }
+  }
+}
