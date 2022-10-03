@@ -27,7 +27,7 @@ router.route("/:id")
         /*    #swagger.parameters['obj'] = {
                   in: 'body',
                   description: 'Updating a quote',
-                  schema: { $ref: '#/definitions/AddQuote' }
+                  schema: { $ref: '#/definitions/UpdateQuote' }
           } */
         quotesControllers.updateQuoteById(req, res);
     })

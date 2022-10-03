@@ -59,7 +59,7 @@
             "in": "body",
             "description": "Updating a quote",
             "schema": {
-              "$ref": "#/definitions/AddQuote"
+              "$ref": "#/definitions/UpdateQuote"
             }
           }
         ],
@@ -85,7 +85,7 @@
       "properties": {
         "quote": {
           "type": "string",
-          "example": "hello there"
+          "example": "add a new quote"
         },
         "author": {
           "type": "string",
@@ -96,6 +96,19 @@
         "quote",
         "author"
       ]
+    },
+    "UpdateQuote": {
+      "type": "object",
+      "properties": {
+        "quote": {
+          "type": "string",
+          "example": "update a quote"
+        },
+        "author": {
+          "type": "string",
+          "example": "Tatenda Nyamuda"
+        }
+      }
     }
   }
 }

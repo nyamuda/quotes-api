@@ -11,8 +11,12 @@ const doc = {
     schemes: ['https'],
     definitions: {
         AddPost: {
-            $quote: "hello there",
+            $quote: "add a new quote",
             $author: "Tatenda Nyamuda"
+        },
+        UpdateQuote: {
+            quote: "update a quote",
+            author: "Tatenda Nyamuda"
         }
     }
 };
