@@ -3,7 +3,7 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
     info: {
         title: 'Quotes API',
-        description: 'Quotes by various authors',
+        description: 'Powerful quotes by various authors',
     },
     host: 'quotes-app-7pqb.onrender.com',
     schemes: ['https'],

@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Quotes API",
-    "description": "Quotes by various authors",
+    "description": "Powerful quotes by various authors",
     "version": "1.0.0"
   },
   "host": "quotes-app-7pqb.onrender.com",
