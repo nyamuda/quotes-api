@@ -18,6 +18,14 @@ const doc = {
             quote: "update a quote",
             author: "Tatenda Nyamuda"
         }
+    },
+    securityDefinitions: {
+        oAuthGithub: {
+            type: 'oauth2',
+            authorizationUrl: 'http://localhost:3000/login/github',
+            flow: 'implicit',
+
+        }
     }
 };
 

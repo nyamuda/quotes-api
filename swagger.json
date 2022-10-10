@@ -10,6 +10,13 @@
   "schemes": [
     "http"
   ],
+  "securityDefinitions": {
+    "oAuthGithub": {
+      "type": "oauth2",
+      "authorizationUrl": "http://localhost:3000/login/github",
+      "flow": "accessCode"
+    }
+  },
   "paths": {
     "/quotes/": {
       "get": {
@@ -76,6 +83,23 @@
           }
         ],
         "responses": {}
+      }
+    },
+    "/oauth-callback": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     }
   },

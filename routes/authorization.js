@@ -5,7 +5,13 @@ require("dotenv").config();
 
 
 //authorize the app to use use GitHub
+
 router.route("/login/github")
+    /* #swagger.security = [{
+               "oAuthGithub": [
+                  
+               ]
+           }] */
     .get((req, res) => {
         res.redirect(`https://github.com/login/oauth/authorize?client_id=${process.env.ClientID}`)
     })
