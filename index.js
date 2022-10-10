@@ -33,7 +33,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 //listen to a port
 app.listen(process.env.PORT, () => {
-    console.log("Quotes API running");
+    console.log("Quotes API now running");
     //run database
     quoteModels.connect()
 })

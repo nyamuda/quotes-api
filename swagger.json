@@ -5,10 +5,10 @@
     "description": "Powerful quotes by various authors",
     "version": "1.0.0"
   },
-  "host": "quotes-app-7pqb.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/quotes/": {
