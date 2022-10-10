@@ -16,7 +16,7 @@ router.route("/login/github")
 //get the authorization token
 router.route("/oauth-callback")
     .get((req, res) => {
-        controllers.getAccessToken(req, res);
+        controllers.getGithubUser(req, res);
     })
 
 
