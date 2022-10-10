@@ -1,5 +1,7 @@
 let Joi = require("joi");
+const axios = require('axios');
 
+//validate new quote
 module.exports.validateNewPost = (data) => {
 
     let schema = Joi.object({
@@ -11,6 +13,7 @@ module.exports.validateNewPost = (data) => {
 }
 
 
+//validate quote update
 module.exports.validePostUpdate = data => {
     let schema = Joi.object({
         quote: Joi.string().min(5),
@@ -18,4 +21,29 @@ module.exports.validePostUpdate = data => {
     })
 
     return schema.validate(data);
+}
+
+
+//get github access token
+module.exports.getGithubAccessToken = async function(req, res) {
+    let options = {
+        method: 'POST',
+        url: 'https://github.com/login/oauth/access_token',
+        headers: {
+            'Accept': 'application/json'
+        },
+        data: {
+            client_id: `${process.env.ClientID}`,
+            client_secret: `${process.env.ClientSecret}`,
+            code: `${req.query.code}`
+        }
+    }
+
+    let response = await axios(options);
+
+    let responseOk = response && response.status === 200 && response.statusText == 'OK';
+
+    if (responseOk) {
+        return res.send(response.data.access_token);
+    }
 }
