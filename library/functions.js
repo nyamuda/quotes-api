@@ -59,6 +59,6 @@ module.exports.getGithubUser = async function(token) {
     let response = await axios(options);
     let responseOk = response && response.status === 200 && response.statusText == 'OK';
     if (responseOk) {
-        return response;
+        return response.data;
     }
 }
