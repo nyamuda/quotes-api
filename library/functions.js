@@ -1,19 +1,41 @@
 let Joi = require("joi");
+require("dotenv").config();
 const axios = require('axios');
 let User = require("../models/user");
+let jwt = require("jsonwebtoken");
 
 
-//hash a password
-module.exports.hashPassword = password => {
 
+
+//ensure you're a logged in user --- middleware
+module.exports.ensureLogin = (req, res, next) => {
+    try {
+        let header_value = req.body.token || req.headers.authorization.split(" ")[1];
+        let token = jwt.verify(header_value, process.env.SECRET);
+        return next()
+
+    } catch (error) {
+        return res.status(401).json({ message: "Unauthorized" });
     }
-    //validate email
-module.exports.validateEmail = email => {
-    let schema = Joi.object({
-        email: Joi.string().email().required()
-    })
+}
 
-    return schema.validate(email);
+
+//ensure you're an admin --- middleware
+module.exports.ensureAdmin = (req, res, next) => {
+    try {
+        let header_value = req.body.token || req.header.authorization.split(" ")[1];
+        let token = jwt.verify(header_value, process.env.SECRET);
+
+        //if the user is not an admin, or if admin=false
+        if (!token.admin) {
+            return res.status(401).json({ message: "You do not have the authority to carry out this action." })
+        }
+
+        return next()
+
+    } catch (error) {
+        return res.status(401).json({ message: "Unauthorized" })
+    }
 }
 
 //validate new user

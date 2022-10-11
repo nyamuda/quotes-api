@@ -1,14 +1,15 @@
 let express = require("express");
 let router = express.Router();
 let quotesControllers = require("../controllers/index");
+let middleware = require("../library/functions");
 
 
 router.route("/")
-    .get(quotesControllers.getQuotes)
+    .get(middleware.ensureLogin, quotesControllers.getQuotes)
     // .post(quotesControllers.addQuote);
 
 router.route("/")
-    .post((req, res) => {
+    .post(middleware.ensureAdmin, (req, res) => {
         /*    #swagger.parameters['obj'] = {
                   in: 'body',
                   description: 'Adding new quote',
@@ -19,11 +20,11 @@ router.route("/")
 
 
 router.route("/:id")
-    .get(quotesControllers.getQuoteById);
+    .get(middleware.ensureLogin, quotesControllers.getQuoteById);
 
 
 router.route("/:id")
-    .put((req, res) => {
+    .put(middleware.ensureAdmin, (req, res) => {
         /*    #swagger.parameters['obj'] = {
                   in: 'body',
                   description: 'Updating a quote',
@@ -33,6 +34,6 @@ router.route("/:id")
     })
 
 router.route("/:id")
-    .delete(quotesControllers.deleteQuoteById)
+    .delete(middleware.ensureAdmin, quotesControllers.deleteQuoteById)
 
 module.exports = router;
