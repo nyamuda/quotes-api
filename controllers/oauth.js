@@ -27,9 +27,10 @@ module.exports.getGithubUser = async function(req, res) {
         //check to see if user data is already in the database
         let old_user = await User.findOne({ email: important_user_data.email });
 
+       
         //if doesn't already exist
         //create a new one
-        if (old_user.length === 0) {
+        if (!old_user) {
             User.create(important_user_data)
         }
 
@@ -40,7 +41,7 @@ module.exports.getGithubUser = async function(req, res) {
         }
         let token = jwt.sign(payload, process.env.SECRET, { expiresIn: "24h" });
 
-        return res.json(token);
+        return res.json({token});
 
     } catch (error) {
 

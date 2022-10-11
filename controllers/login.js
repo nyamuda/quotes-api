@@ -21,8 +21,8 @@ module.exports.loginUser = async function(req, res) {
         let foundUser = await User.findOne({ email });
 
         //if no user was found
-        if (foundUser.length === 0) {
-            return res.status(400).json({ "message": "Email does not exist" })
+        if (!foundUser) {
+            return res.status(400).json({ "message": "User with that email does not exist" })
         }
 
         //compare passwords

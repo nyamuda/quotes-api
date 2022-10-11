@@ -18,7 +18,7 @@ module.exports.registerUser = async function(req, res) {
         //check to see if user already exists
         let foundUser = await User.findOne({ email: req.body.email });
 
-        if (foundUser.length === 1) {
+        if (foundUser) {
             return res.status(409).json({ "message": "User already exists. Please login" })
         }
 
