@@ -10,7 +10,7 @@ const doc = {
     // host: 'quotes-app-7pqb.onrender.com',
     // schemes: ['https'],
     definitions: {
-        AddPost: {
+        AddQuote: {
             $quote: "add a new quote",
             $author: "Tatenda Nyamuda"
         },

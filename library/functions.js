@@ -10,8 +10,9 @@ let jwt = require("jsonwebtoken");
 //ensure you're a logged in user --- middleware
 module.exports.ensureLogin = (req, res, next) => {
     try {
-        let header_value = req.body.token || req.headers.authorization.split(" ")[1];
+        let header_value = req.body.token || req.headers.authorization;
         let token = jwt.verify(header_value, process.env.SECRET);
+        console.log(token)
         return next()
 
     } catch (error) {
@@ -23,7 +24,7 @@ module.exports.ensureLogin = (req, res, next) => {
 //ensure you're an admin --- middleware
 module.exports.ensureAdmin = (req, res, next) => {
     try {
-        let header_value = req.body.token || req.header.authorization.split(" ")[1];
+        let header_value = req.body.token || req.headers.authorization;
         let token = jwt.verify(header_value, process.env.SECRET);
 
         //if the user is not an admin, or if admin=false

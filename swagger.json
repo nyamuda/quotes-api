@@ -38,9 +38,14 @@
         "description": "",
         "parameters": [
           {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
             "name": "obj",
             "in": "body",
-            "description": "Adding new quote",
+            "description": "Add new quote. Only admins have the authority to do this.\n    Default admin details &#187; <b>email: </b><i>admin@example.com</i>, <b>password: </b><i>helloworld</i>. \n   Login with those details and get the authorization token.",
             "schema": {
               "$ref": "#/definitions/AddQuote"
             }
@@ -85,9 +90,14 @@
             "type": "string"
           },
           {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
             "name": "obj",
             "in": "body",
-            "description": "Updating a quote",
+            "description": "Updating a quote. Only admins have the authority to do this.\n    Default admin details &#187; <b>email: </b><i>admin@example.com</i>, <b>password: </b><i>helloworld</i>. \n   Login with those details and get the authorization token.",
             "schema": {
               "$ref": "#/definitions/UpdateQuote"
             }
@@ -106,6 +116,12 @@
             "name": "id",
             "in": "path",
             "required": true,
+            "type": "string",
+            "description": "Delete a quote. Only admins have the authority to do this.\n    Default admin details &#187; <b>email: </b><i>admin@example.com</i>, <b>password: </b><i>helloworld</i>. \n   Login with those details and get the authorization token."
+          },
+          {
+            "name": "authorization",
+            "in": "header",
             "type": "string"
           },
           {
@@ -196,7 +212,7 @@
     }
   },
   "definitions": {
-    "AddPost": {
+    "AddQuote": {
       "type": "object",
       "properties": {
         "quote": {

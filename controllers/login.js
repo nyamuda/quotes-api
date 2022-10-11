@@ -36,7 +36,7 @@ module.exports.loginUser = async function(req, res) {
         //create a token for the user
         let payload = {
             email,
-            admin: false
+            admin: foundUser.admin
         }
         let token = jwt.sign(payload, process.env.SECRET, { expiresIn: "24h" });
 
