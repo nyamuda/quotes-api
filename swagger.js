@@ -31,7 +31,7 @@ const doc = {
     securityDefinitions: {
         oAuthGithub: {
             type: 'oauth2',
-            authorizationUrl: 'http://localhost:3000/login/github',
+            authorizationUrl: 'https://quotes-app-7pqb.onrender.com/login/github',
             flow: 'implicit',
 
         }
