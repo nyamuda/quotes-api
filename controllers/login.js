@@ -7,7 +7,7 @@ let bcrypt = require("bcrypt");
 
 
 //login a user
-modules.exports.loginUser = async function(req, res) {
+module.exports.loginUser = async function(req, res) {
 
     try {
         let email = req.body.email;

@@ -3,7 +3,8 @@ let express = require("express");
 let quoteRoutes = require("./routes/quotes");
 let homeRoute = require("./routes/index");
 let quoteModels = require("./models/index");
-let oauthRoutes = require("./routes/oauth")
+let oauthRoutes = require("./routes/oauth");
+let loginRoutes = require("./routes/login");
 let app = express();
 
 
@@ -25,6 +26,7 @@ app.use(function(req, res, next) {
 app.use("/", homeRoute);
 app.use("/quotes", quoteRoutes);
 app.use(oauthRoutes);
+app.use(loginRoutes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 

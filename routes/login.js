@@ -1,4 +1,5 @@
 let router = require("express").Router();
+let controllers = require("../controllers/login");
 
 
 
@@ -6,6 +7,8 @@ let router = require("express").Router();
 
 router.route("/login")
     .post((req, res) => {
-
-
+        controllers.loginUser(req, res);
     })
+
+
+module.exports = router;
