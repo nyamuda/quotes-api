@@ -17,6 +17,15 @@ const doc = {
         UpdateQuote: {
             quote: "update a quote",
             author: "Tatenda Nyamuda"
+        },
+        registerUser: {
+            name: "John Doe",
+            email: "email@example.com",
+            password:"helloworld"
+        },
+         loginUser: {
+            email: "email@example.com",
+            password:"helloworld"
         }
     },
     securityDefinitions: {

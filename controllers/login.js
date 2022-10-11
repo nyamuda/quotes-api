@@ -22,7 +22,7 @@ module.exports.loginUser = async function(req, res) {
 
         //if no user was found
         if (!foundUser) {
-            return res.status(400).json({ "message": "User with that email does not exist" })
+            return res.status(400).json({ "message": "User with that email does not exist. Please register" })
         }
 
         //compare passwords

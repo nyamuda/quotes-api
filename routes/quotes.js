@@ -5,7 +5,7 @@ let middleware = require("../library/functions");
 
 
 router.route("/")
-    .get(quotesControllers.getQuotes)
+    .get(middleware.ensureLogin,quotesControllers.getQuotes)
     // .post(quotesControllers.addQuote);
 
 router.route("/")
