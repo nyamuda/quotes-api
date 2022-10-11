@@ -14,7 +14,7 @@
     "oAuthGithub": {
       "type": "oauth2",
       "authorizationUrl": "http://localhost:3000/login/github",
-      "flow": "accessCode"
+      "flow": "implicit"
     }
   },
   "paths": {

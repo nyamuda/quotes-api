@@ -1,10 +1,10 @@
 let express = require("express");
-let controllers = require("../controllers/authorization")
+let controllers = require("../controllers/oauth")
 let router = express.Router();
 require("dotenv").config();
 
 
-//authorize the app to use use GitHub
+//authorize the app to use GitHub
 
 router.route("/login/github")
     /* #swagger.security = [{

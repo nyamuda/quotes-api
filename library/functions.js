@@ -1,5 +1,31 @@
 let Joi = require("joi");
 const axios = require('axios');
+let User = require("../models/user");
+
+
+//hash a password
+module.exports.hashPassword = password => {
+
+    }
+    //validate email
+module.exports.validateEmail = email => {
+    let schema = Joi.object({
+        email: Joi.string().email().required()
+    })
+
+    return schema.validate(email);
+}
+
+//validate new user
+module.exports.validateNewUser = data => {
+    let schema = Joi.object({
+        name: Joi.string().required(),
+        email: Joi.string().email().required(),
+        password: Joi.string().min(8)
+    })
+
+    return schema.validate(data);
+}
 
 //validate new quote
 module.exports.validateNewPost = (data) => {
@@ -48,6 +74,7 @@ module.exports.getGithubAccessToken = async function(code) {
     }
 }
 
+//get github user information
 module.exports.getGithubUser = async function(token) {
     let options = {
         method: 'GET',
@@ -61,4 +88,17 @@ module.exports.getGithubUser = async function(token) {
     if (responseOk) {
         return response.data;
     }
+}
+
+
+//check if a user exists
+//if they don't, we create a new one
+module.exports.checkUserExists = async function(email) {
+
+    let user = await User.findOne({ email });
+
+    if (user) {
+
+    }
+
 }
