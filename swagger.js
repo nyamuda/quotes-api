@@ -5,10 +5,10 @@ const doc = {
         title: 'Quotes API',
         description: 'Powerful quotes by various authors',
     },
-    host: 'localhost:3000',
-    schemes: ['http'],
-    // host: 'quotes-app-7pqb.onrender.com',
-    // schemes: ['https'],
+    // host: 'localhost:3000',
+    // schemes: ['http'],
+    host: 'quotes-app-7pqb.onrender.com',
+    schemes: ['https'],
     definitions: {
         AddQuote: {
             $quote: "add a new quote",
