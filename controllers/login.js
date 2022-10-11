@@ -1,4 +1,3 @@
-let helperFunctions = require("../library/functions");
 require("dotenv").config();
 let User = require("../models/user");
 let jwt = require("jsonwebtoken");

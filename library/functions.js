@@ -21,7 +21,7 @@ module.exports.validateNewUser = data => {
     let schema = Joi.object({
         name: Joi.string().required(),
         email: Joi.string().email().required(),
-        password: Joi.string().min(8)
+        password: Joi.string().min(8).required()
     })
 
     return schema.validate(data);
