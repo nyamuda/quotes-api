@@ -18,7 +18,7 @@ module.exports.loginUser = async function(req, res) {
         }
 
         //get user using email
-        let foundUser = User.findOne({ email });
+        let foundUser = await User.findOne({ email });
 
         //if no user was found
         if (foundUser.length === 0) {
